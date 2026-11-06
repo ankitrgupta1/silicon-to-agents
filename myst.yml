@@ -26,6 +26,8 @@ project:
         - file: 04-architectures/architectures.md
         - file: 05-training/training.md
         - file: 06-inference/inference.md
+          children:
+            - file: 06-inference/kv-cache.md
         - file: 07-applications/applications.md
         - file: 08-agents/agents.md
         - file: cross-cutting/cross-cutting.md

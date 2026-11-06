@@ -15,7 +15,7 @@ For people who want the deep internals. Builds a model from scratch, then follow
 | 7 | CUDA & Triton kernels | [01 Systems](../01-systems/systems.md) | planned |
 | 8 | FlashAttention | [01 Systems](../01-systems/systems.md) | planned |
 | 9 | Collectives & parallelism | [02 Distributed](../02-distributed/distributed.md) | planned |
-| 10 | KV cache, quantization, speculative decoding | [06 Inference](../06-inference/inference.md) · [calculator](../calculators/kv-cache.ipynb) | planned |
+| 10 | KV cache, quantization, speculative decoding | [KV cache](../06-inference/kv-cache.md) · [06 Inference](../06-inference/inference.md) · [calculator](../calculators/kv-cache.ipynb) | planned |
 | 11 | Serving at scale | [06 Inference](../06-inference/inference.md) | planned |
 | 12 | Wrap your model in an agent | [08 Agents](../08-agents/agents.md) | planned |
 

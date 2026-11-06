@@ -7,7 +7,7 @@ Running a trained model fast and cheaply: from a single forward pass to serving 
 | Topic | What it covers | Status |
 |---|---|---|
 | Inference fundamentals | Prefill vs decode, batching, TTFT and throughput, sampling, structured output | planned |
-| KV cache | Sizing math, PagedAttention, prefix caching, KV quantization and offload | planned |
+| [KV cache](kv-cache.md) | Sizing math, PagedAttention, prefix caching, KV quantization and offload | **draft** |
 | Quantization | GPTQ, AWQ, FP8/FP4, GGUF | planned |
 | Speculative decoding | Draft models, Medusa, EAGLE, multi-token prediction heads | planned |
 | Serving engines | vLLM, SGLang, TensorRT-LLM, llama.cpp/Ollama, MLX | planned |

@@ -13,6 +13,8 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 - KV-cache calculator (`s2a.kv_cache`) with tests and a Colab-ready notebook.
 - Website built with Jupyter Book 2 and deployed to GitHub Pages.
 - CI for tests, plus a weekly link check.
+- Topic page: [KV cache](06-inference/kv-cache.md).
+- Licenses: MIT for code, CC BY 4.0 for written content.
 
 ### Changed
 

@@ -78,3 +78,7 @@ _templates/      template for new topic pages
 ```
 
 Contributions follow the [topic template](_templates/topic.md); AI coding agents should read [AGENTS.md](AGENTS.md).
+
+## License
+
+Code is under the [MIT License](LICENSE). Written content is under [CC BY 4.0](LICENSE-CONTENT): reuse it freely with credit.
