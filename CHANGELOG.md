@@ -6,6 +6,9 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 
 ### Added
 
+- Interactive [KV-cache calculator](https://ankitrgupta1.github.io/silicon-to-agents/widgets/kv-cache.html) that runs in the browser.
+- Hidden answers in the *Check yourself* sections, and in the topic template.
+- Site build check on every pull request.
 - Topic page: [Tokenization](03-foundations/tokenization.md), with a from-scratch byte-level BPE tokenizer (`s2a.bpe`) and a [tokenizer lab](labs/tokenizer.ipynb).
 - Repository scaffold: nine stack layers, prerequisites and cross-cutting sections.
 - Three learning pathways: Fundamentals, Builder, Practitioner.

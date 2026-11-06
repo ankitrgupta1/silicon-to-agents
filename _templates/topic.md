@@ -27,7 +27,7 @@ The mechanics and math. Use diagrams where they help.
 
 ## Code
 
-Link to the implementation in `src/s2a/` and the notebook that runs it.
+Link to the implementation in `src/s2a/`, the lab or calculator notebook that runs it, and the interactive widget if this topic has one.
 
 ## Numbers that matter
 
@@ -55,4 +55,13 @@ Tag each with the pathway it suits: **F** fundamentals, **B** builder, **P** pra
 
 ## Check yourself
 
-Two or three exercises or questions that show you understood it.
+Try each one before opening the answer.
+
+**1. A question or exercise that shows you understood the topic.**
+
+<details>
+<summary>Answer</summary>
+
+The answer, with the reasoning. Keep the blank lines around this text so Markdown renders inside the box.
+
+</details>
