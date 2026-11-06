@@ -16,6 +16,13 @@ A living knowledge base about the AI stack, from hardware to agents. Markdown to
 - Keep prose plain and direct. Explain intuition before math.
 - Record notable changes in `CHANGELOG.md` under `Unreleased`.
 
+## Branches and pull requests
+
+- Never commit directly to `main`. `main` is what the website publishes.
+- Start every update on a new branch from the latest `main`, named by type: `content/<topic>` (new or updated pages), `code/<thing>`, `fix/<thing>`, `chore/<thing>` (tooling, CI, config).
+- Keep one topic or change per branch, and open a pull request into `main`. CI must pass before merging.
+- Merging to `main` deploys the site automatically.
+
 ## Code
 
 - Python 3.10+, tested with `pytest`. Run `pip install -e ".[dev]" && pytest` before committing.
