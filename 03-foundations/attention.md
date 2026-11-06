@@ -101,6 +101,7 @@ Attention compute grows with the square of sequence length, which is why long co
 ## What changed
 
 - 2026-11: First version of this page.
+- 2026-11: Added hidden answers to *Check yourself*.
 
 ## Open questions
 
@@ -118,6 +119,47 @@ Attention compute grows with the square of sequence length, which is why long co
 
 ## Check yourself
 
-1. Why does removing the $\sqrt{d_k}$ scaling hurt training as $d_k$ grows?
-2. Change the code to multi-head attention with $h = 2$ heads.
-3. A model has 48 layers, 8 KV heads and head dimension 128, stored in FP8 (1 byte). How much KV cache does a 32k-token context need?
+Try each one before opening the answer.
+
+**1. Why does removing the $\sqrt{d_k}$ scaling hurt training as $d_k$ grows?**
+
+<details>
+<summary>Answer</summary>
+
+A dot product of two random $d_k$-dimensional vectors with unit-variance entries has variance $d_k$, so scores spread out as heads get wider. Softmax over large-magnitude scores becomes nearly one-hot: one token gets almost all the weight, and gradients for the others become tiny. Dividing by $\sqrt{d_k}$ brings the variance back to about 1, keeping softmax in the range where it learns well.
+
+</details>
+
+**2. Change the code to multi-head attention with $h = 2$ heads.**
+
+<details>
+<summary>Answer</summary>
+
+Project as before, split the columns into $h$ heads, attend within each head, then concatenate:
+
+```python
+def multi_head(X, W_q, W_k, W_v, h):
+    Q, K, V = X @ W_q, X @ W_k, X @ W_v
+    d = Q.shape[-1] // h
+    heads = []
+    for i in range(h):
+        q, k, v = (M[:, i*d:(i+1)*d] for M in (Q, K, V))
+        scores = q @ k.T / np.sqrt(d)
+        scores = np.where(np.triu(np.ones_like(scores, bool), 1), -np.inf, scores)
+        w = np.exp(scores - scores.max(-1, keepdims=True))
+        heads.append((w / w.sum(-1, keepdims=True)) @ v)
+    return np.concatenate(heads, axis=-1)                # real models then apply W_o
+```
+
+Real implementations reshape to `(h, n, d_head)` and batch the heads instead of looping.
+
+</details>
+
+**3. A model has 48 layers, 8 KV heads and head dimension 128, stored in FP8 (1 byte). How much KV cache does a 32k-token context need?**
+
+<details>
+<summary>Answer</summary>
+
+Per token: $2 \times 48 \times 8 \times 128 \times 1 = 98{,}304$ bytes = 96 KiB. For 32,768 tokens: 96 KiB × 32,768 = **3 GiB**.
+
+</details>

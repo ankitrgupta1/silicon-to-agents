@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KV-cache calculator</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #59636e; --line: #d1d9e0;
+    --accent: #2f6feb; --weights: #8c959f; --kv: #2f6feb; --free: #e9eef3; --warn: #cf222e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0d1117; --fg: #e6edf3; --muted: #9198a1; --line: #3d444d;
+            --accent: #4493f8; --weights: #6e7681; --kv: #4493f8; --free: #21262d; --warn: #f85149; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 16px; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--fg); }
+  h1 { font-size: 17px; margin: 0 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px 20px; }
+  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 2px; }
+  label b { color: var(--fg); font-weight: 600; float: right; font-variant-numeric: tabular-nums; }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  select { width: 100%; padding: 5px; border: 1px solid var(--line); border-radius: 6px;
+           background: var(--bg); color: var(--fg); font: inherit; }
+  .results { margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .stat { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+  .stat .v { font-size: 20px; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .stat .k { font-size: 12px; color: var(--muted); }
+  .bar { display: flex; height: 22px; border-radius: 6px; overflow: hidden; margin: 16px 0 6px; background: var(--free); }
+  .bar div { transition: width .15s; }
+  .legend { font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
+  .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+  .warn { color: var(--warn); font-weight: 600; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+</style>
+</head>
+<body>
+<h1>KV-cache calculator</h1>
+
+<div class="grid">
+  <div>
+    <label for="model">Model shape</label>
+    <select id="model">
+      <option value="32,8,128,8">Llama 3 8B (32 layers, 8 KV heads)</option>
+      <option value="80,8,128,70.6">Llama 3 70B (80 layers, 8 KV heads)</option>
+      <option value="32,32,128,8">8B with full MHA (32 KV heads)</option>
+      <option value="32,1,128,8">8B with MQA (1 KV head)</option>
+      <option value="custom">Custom…</option>
+    </select>
+  </div>
+  <div>
+    <label for="dtype">Precision</label>
+    <select id="dtype">
+      <option value="2">BF16 / FP16 (2 bytes)</option>
+      <option value="1">FP8 / INT8 (1 byte)</option>
+      <option value="0.5">FP4 / INT4 (½ byte)</option>
+    </select>
+  </div>
+  <div><label for="layers">Layers <b id="layersV"></b></label><input id="layers" type="range" min="1" max="128" value="32"></div>
+  <div><label for="kvheads">KV heads <b id="kvheadsV"></b></label><input id="kvheads" type="range" min="1" max="64" value="8"></div>
+  <div><label for="headdim">Head dimension <b id="headdimV"></b></label><input id="headdim" type="range" min="32" max="256" step="32" value="128"></div>
+  <div><label for="params">Parameters (billions) <b id="paramsV"></b></label><input id="params" type="range" min="1" max="120" step="0.5" value="8"></div>
+  <div><label for="ctx">Context per conversation <b id="ctxV"></b></label><input id="ctx" type="range" min="9" max="20" step="1" value="13"></div>
+  <div><label for="users">Concurrent conversations <b id="usersV"></b></label><input id="users" type="range" min="1" max="256" value="16"></div>
+  <div>
+    <label for="gpu">GPU memory <b id="gpuV"></b></label>
+    <select id="gpu">
+      <option value="24">24 GB (consumer GPU)</option>
+      <option value="48">48 GB</option>
+      <option value="80" selected>80 GB (e.g. H100)</option>
+      <option value="141">141 GB (e.g. H200)</option>
+      <option value="640">640 GB (8 × 80 GB)</option>
+    </select>
+  </div>
+</div>
+
+<div class="results">
+  <div class="stat"><div class="v" id="perTok"></div><div class="k">KV cache per token</div></div>
+  <div class="stat"><div class="v" id="perConv"></div><div class="k">per conversation</div></div>
+  <div class="stat"><div class="v" id="total"></div><div class="k">all conversations</div></div>
+  <div class="stat"><div class="v" id="fit"></div><div class="k">conversations that fit</div></div>
+</div>
+
+<div class="bar" aria-hidden="true"><div id="bW" style="background:var(--weights)"></div><div id="bK" style="background:var(--kv)"></div></div>
+<div class="legend">
+  <span><span class="sw" style="background:var(--weights)"></span>Weights <span id="wV"></span></span>
+  <span><span class="sw" style="background:var(--kv)"></span>KV cache <span id="kV"></span></span>
+  <span><span class="sw" style="background:var(--free)"></span>Free <span id="fV"></span></span>
+</div>
+<div id="status" class="note"></div>
+<div class="note">Bytes per token = 2 (K and V) × layers × KV heads × head dim × bytes per number. Weights assume the same precision as the cache. Reserves 10% of GPU memory for activations and runtime overhead. Doesn't model MLA or hybrid linear-attention layers.</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const GB = 1e9;
+const fmtBytes = (n) => {
+  const u = ["B", "KiB", "MiB", "GiB", "TiB"]; let i = 0;
+  while (Math.abs(n) >= 1024 && i < u.length - 1) { n /= 1024; i++; }
+  return i === 0 ? `${Math.round(n)} B` : `${n.toFixed(n < 10 ? 1 : 0)} ${u[i]}`;
+};
+const fmtTokens = (t) => t >= 1024 ? `${t / 1024}k tokens` : `${t} tokens`;
+
+const bytesPerToken = (layers, kvHeads, headDim, bytes) => 2 * layers * kvHeads * headDim * bytes;
+
+function applyPreset() {
+  const v = $("model").value;
+  if (v === "custom") return;
+  const [l, h, d, p] = v.split(",").map(Number);
+  $("layers").value = l; $("kvheads").value = h; $("headdim").value = d; $("params").value = p;
+}
+
+function update() {
+  const layers = +$("layers").value, kv = +$("kvheads").value, hd = +$("headdim").value;
+  const bytes = +$("dtype").value, params = +$("params").value;
+  const ctx = 2 ** +$("ctx").value, users = +$("users").value, gpu = +$("gpu").value * GB;
+
+  const perTok = bytesPerToken(layers, kv, hd, bytes);
+  const perConv = perTok * ctx, total = perConv * users;
+  const weights = params * 1e9 * bytes;
+  const usable = gpu * 0.9;
+  const room = usable - weights;
+  const fit = room > 0 ? Math.floor(room / perConv) : 0;
+
+  $("layersV").textContent = layers; $("kvheadsV").textContent = kv; $("headdimV").textContent = hd;
+  $("paramsV").textContent = params + "B"; $("ctxV").textContent = fmtTokens(ctx); $("usersV").textContent = users;
+  $("perTok").textContent = fmtBytes(perTok); $("perConv").textContent = fmtBytes(perConv);
+  $("total").textContent = fmtBytes(total); $("fit").textContent = fit.toLocaleString();
+
+  const pct = (x) => Math.max(0, Math.min(100, (x / gpu) * 100));
+  const wPct = pct(weights), kPct = Math.min(pct(total), 100 - wPct);
+  $("bW").style.width = wPct + "%"; $("bK").style.width = kPct + "%";
+  $("wV").textContent = fmtBytes(weights); $("kV").textContent = fmtBytes(total);
+  $("fV").textContent = fmtBytes(Math.max(0, gpu - weights - total));
+
+  const s = $("status");
+  $("bK").style.background = weights + total > usable ? "var(--warn)" : "var(--kv)";
+  if (weights > usable) { s.className = "note warn"; s.textContent = "The weights alone don't fit on this GPU. Try lower precision or more memory."; }
+  else if (weights + total > usable) { s.className = "note warn"; s.textContent = `Doesn't fit: ${users} conversations need ${fmtBytes(total)} of cache, but only ${fmtBytes(room)} is left after weights and overhead.`; }
+  else { s.className = "note"; s.textContent = `Fits, with room for ${fit.toLocaleString()} conversations of this length.`; }
+}
+
+$("model").addEventListener("change", () => { applyPreset(); update(); });
+for (const id of ["layers", "kvheads", "headdim", "params"])
+  $(id).addEventListener("input", () => { $("model").value = "custom"; update(); });
+for (const id of ["dtype", "ctx", "users", "gpu"]) $(id).addEventListener("input", update);
+applyPreset(); update();
+</script>
+</body>
+</html>

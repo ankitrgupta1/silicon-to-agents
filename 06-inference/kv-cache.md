@@ -41,8 +41,9 @@ Each decode step has to read **all the model weights** plus **every sequence's w
 
 ## Code
 
+- **[Interactive calculator](https://ankitrgupta1.github.io/silicon-to-agents/widgets/kv-cache.html):** sliders for model shape, precision, context length, users and GPU memory. Runs in your browser.
 - [`s2a.kv_cache`](../src/s2a/kv_cache.py): sizing functions, tested in CI.
-- [KV-cache calculator notebook](../calculators/kv-cache.ipynb): runs on CPU or in Colab.
+- [KV-cache calculator notebook](../calculators/kv-cache.ipynb): the same math in Python, on CPU or in Colab.
 
 ## Numbers that matter
 
@@ -92,6 +93,7 @@ Batching still raises total throughput (32 tokens per step instead of 1), but ev
 ## What changed
 
 - 2026-11: First version of this page.
+- 2026-11: Added the interactive calculator and hidden answers to *Check yourself*.
 
 ## Open questions
 
@@ -111,6 +113,33 @@ Batching still raises total throughput (32 tokens per step instead of 1), but ev
 
 ## Check yourself
 
-1. Why is prefill usually compute-bound but decode memory-bound?
-2. With the calculator, find the context length at which one user's cache equals the model's weights for your favourite open model.
-3. An agent's system prompt and tool definitions total 6,000 tokens and are identical on every request. What does prefix caching save per request, in memory and in prefill compute?
+Try each one before opening the answer.
+
+**1. Why is prefill usually compute-bound but decode memory-bound?**
+
+<details>
+<summary>Answer</summary>
+
+In prefill, every weight loaded from memory is used for all the prompt's tokens at once, so there's a lot of math per byte read (high arithmetic intensity). In decode, each sequence adds just one token per step, but the GPU still has to read every weight and that sequence's whole cache, so there's very little math per byte. The GPU waits on memory, not on its compute units.
+
+</details>
+
+**2. With the [calculator](https://ankitrgupta1.github.io/silicon-to-agents/widgets/kv-cache.html), find the context length at which one conversation's cache is as large as the model's weights.**
+
+<details>
+<summary>Answer</summary>
+
+For the Llama-3-8B shape in BF16, weights are about 16 GB and the cache is 128 KiB (131,072 bytes) per token, so the crossover is about $16 \times 10^9 / 131{,}072 \approx 122{,}000$ tokens, a little under 128k. For a model with fewer KV heads per parameter (more aggressive GQA, or MLA) the crossover is much further out.
+
+</details>
+
+**3. An agent's system prompt and tool definitions total 6,000 tokens and are identical on every request. For the Llama-3-8B shape, what does prefix caching save?**
+
+<details>
+<summary>Answer</summary>
+
+- **Memory:** 6,000 × 128 KiB ≈ 750 MiB per conversation. Without sharing, 20 concurrent conversations store 20 copies (about 15 GiB). With prefix caching they share one.
+- **Compute:** prefill costs roughly 2 × parameters FLOPs per token, so skipping 6,000 tokens saves about 2 × 8×10⁹ × 6,000 ≈ 10¹⁴ FLOPs per request.
+- **Latency:** time to first token drops, because only the new part of the prompt needs prefill.
+
+</details>

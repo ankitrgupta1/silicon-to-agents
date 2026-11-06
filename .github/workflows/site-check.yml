@@ -1,0 +1,27 @@
+name: Site build check
+
+# Builds the website on every pull request so problems show up before merging.
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: /${{ github.event.repository.name }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24.x
+      - name: Install Jupyter Book
+        run: npm install -g jupyter-book
+      - name: Build HTML
+        run: jupyter-book build --html
+      - name: Add interactive widgets
+        run: cp -r widgets _build/html/widgets
+      - uses: actions/upload-artifact@v6
+        with:
+          name: site-preview
+          path: _build/html
+          retention-days: 7
