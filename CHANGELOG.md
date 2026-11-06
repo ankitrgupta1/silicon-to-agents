@@ -13,3 +13,8 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 - KV-cache calculator (`s2a.kv_cache`) with tests and a Colab-ready notebook.
 - Website built with Jupyter Book 2 and deployed to GitHub Pages.
 - CI for tests, plus a weekly link check.
+
+### Changed
+
+- Layer overview pages are named after their layer (e.g. `00-hardware/hardware.md`) so site URLs are readable, like `/hardware`.
+- GitHub Actions updated to their Node 24 versions.

@@ -90,12 +90,12 @@ Using the [KV-cache calculator](../calculators/kv-cache.ipynb) with a Llama-3-8B
 | GQA (what Llama 3 8B uses) | 8 | 128 KiB | 1 GiB |
 | MQA | 1 | 16 KiB | 128 MiB |
 
-Attention compute grows with the square of sequence length, which is why long context is expensive and why FlashAttention (see [01 Systems](../01-systems/index.md)) avoids writing the $n \times n$ score table to slow memory.
+Attention compute grows with the square of sequence length, which is why long context is expensive and why FlashAttention (see [01 Systems](../01-systems/systems.md)) avoids writing the $n \times n$ score table to slow memory.
 
 ## Current consensus (as of 2026-11)
 
 - GQA is the default in dense open models. DeepSeek's MLA is the main alternative where KV-cache size matters most.
-- Many 2025–26 models are **hybrids**: most layers use cheaper linear attention or state-space blocks, with full softmax attention every few layers. See [04 Architectures](../04-architectures/index.md).
+- Many 2025–26 models are **hybrids**: most layers use cheaper linear attention or state-space blocks, with full softmax attention every few layers. See [04 Architectures](../04-architectures/architectures.md).
 - RoPE is the standard way to give attention position information (see Foundations: embeddings & positions, planned).
 
 ## What changed

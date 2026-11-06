@@ -6,15 +6,15 @@ For people new to machine learning. Math and intuition first, then building a ti
 
 | # | Step | Where | Status |
 |---|---|---|---|
-| 1 | Linear algebra, calculus, probability | [Prerequisites](../prereqs/index.md) | planned |
-| 2 | Python & PyTorch basics | [Prerequisites](../prereqs/index.md) | planned |
-| 3 | Backprop by hand (micrograd) | [Prerequisites](../prereqs/index.md) | planned |
-| 4 | Tokenization | [03 Foundations](../03-foundations/index.md) | planned |
-| 5 | Embeddings & positions | [03 Foundations](../03-foundations/index.md) | planned |
+| 1 | Linear algebra, calculus, probability | [Prerequisites](../prereqs/prereqs.md) | planned |
+| 2 | Python & PyTorch basics | [Prerequisites](../prereqs/prereqs.md) | planned |
+| 3 | Backprop by hand (micrograd) | [Prerequisites](../prereqs/prereqs.md) | planned |
+| 4 | Tokenization | [03 Foundations](../03-foundations/foundations.md) | planned |
+| 5 | Embeddings & positions | [03 Foundations](../03-foundations/foundations.md) | planned |
 | 6 | Attention | [Attention](../03-foundations/attention.md) | draft |
-| 7 | The transformer block | [04 Architectures](../04-architectures/index.md) | planned |
-| 8 | Train a tiny GPT | [05 Training](../05-training/index.md) | planned |
-| 9 | Prompting | [07 Applications](../07-applications/index.md) | planned |
-| 10 | RAG basics | [07 Applications](../07-applications/index.md) | planned |
+| 7 | The transformer block | [04 Architectures](../04-architectures/architectures.md) | planned |
+| 8 | Train a tiny GPT | [05 Training](../05-training/training.md) | planned |
+| 9 | Prompting | [07 Applications](../07-applications/applications.md) | planned |
+| 10 | RAG basics | [07 Applications](../07-applications/applications.md) | planned |
 
 **Checkpoint project:** a character-level GPT trained on a small text, plus a short write-up of what each part does.

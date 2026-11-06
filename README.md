@@ -23,17 +23,17 @@ A living knowledge base, with runnable code, that covers how modern AI works acr
 
 | Layer | Folder |
 |---|---|
-| Prerequisites | [prereqs](prereqs/index.md) |
-| 00 Hardware | [00-hardware](00-hardware/index.md) |
-| 01 Systems | [01-systems](01-systems/index.md) |
-| 02 Distributed | [02-distributed](02-distributed/index.md) |
-| 03 Foundations | [03-foundations](03-foundations/index.md) |
-| 04 Architectures | [04-architectures](04-architectures/index.md) |
-| 05 Training | [05-training](05-training/index.md) |
-| 06 Inference | [06-inference](06-inference/index.md) |
-| 07 Applications | [07-applications](07-applications/index.md) |
-| 08 Agents | [08-agents](08-agents/index.md) |
-| Cross-cutting | [cross-cutting](cross-cutting/index.md) |
+| Prerequisites | [prereqs](prereqs/prereqs.md) |
+| 00 Hardware | [00-hardware](00-hardware/hardware.md) |
+| 01 Systems | [01-systems](01-systems/systems.md) |
+| 02 Distributed | [02-distributed](02-distributed/distributed.md) |
+| 03 Foundations | [03-foundations](03-foundations/foundations.md) |
+| 04 Architectures | [04-architectures](04-architectures/architectures.md) |
+| 05 Training | [05-training](05-training/training.md) |
+| 06 Inference | [06-inference](06-inference/inference.md) |
+| 07 Applications | [07-applications](07-applications/applications.md) |
+| 08 Agents | [08-agents](08-agents/agents.md) |
+| Cross-cutting | [cross-cutting](cross-cutting/cross-cutting.md) |
 
 ## Choose your path
 
