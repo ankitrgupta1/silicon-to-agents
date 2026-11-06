@@ -81,4 +81,4 @@ Contributions follow the [topic template](_templates/topic.md); AI coding agents
 
 ## License
 
-Code is under the [MIT License](LICENSE). Written content is under [CC BY 4.0](LICENSE-CONTENT): reuse it freely with credit.
+Code is under the [MIT License](https://github.com/ankitrgupta1/silicon-to-agents/blob/main/LICENSE). Written content is under [CC BY 4.0](https://github.com/ankitrgupta1/silicon-to-agents/blob/main/LICENSE-CONTENT): reuse it freely with credit.
