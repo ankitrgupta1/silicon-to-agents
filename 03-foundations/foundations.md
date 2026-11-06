@@ -6,7 +6,7 @@ The core ideas inside every language model: turning text into tokens and vectors
 
 | Topic | What it covers | Status |
 |---|---|---|
-| Tokenization | Byte-level BPE, SentencePiece, training a tokenizer | planned |
+| [Tokenization](tokenization.md) | Byte-level BPE, SentencePiece, training a tokenizer | **draft** |
 | Embeddings & positions | Token embeddings, RoPE and its scaling, sentence embeddings | planned |
 | [Attention](attention.md) | Scaled dot-product attention, causal masking, MHA → MQA → GQA → MLA | **draft** |
 | Language-modeling objective | Next-token prediction, cross-entropy, perplexity, multi-token prediction | planned |
