@@ -1,0 +1,4 @@
+# Packages used by notebooks. Install the repo's own code with: pip install -e ".[dev]"
+numpy>=1.26
+matplotlib>=3.8
+jupyter>=1.0

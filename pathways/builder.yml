@@ -1,0 +1,17 @@
+id: builder
+title: Builder
+steps:
+  - applications.prompting
+  - applications.rag
+  - applications.context-engineering
+  - agents.agent-loop
+  - agents.protocols
+  - agents.memory
+  - agents.multi-agent
+  - cross-cutting.evals
+  - agents.security
+  - foundations.attention
+  - inference.kv-cache
+  - inference.quantization
+  - inference.serving-engines
+  - cross-cutting.cost

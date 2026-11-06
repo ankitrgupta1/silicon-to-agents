@@ -1,0 +1,23 @@
+id: practitioner
+title: Practitioner
+steps:
+  - foundations.attention
+  - architectures.transformer
+  - training.tiny-gpt
+  - architectures.moe
+  - architectures.ssm-hybrids
+  - training.data
+  - training.pretraining-scaling
+  - training.post-training
+  - training.rl-reasoning
+  - hardware.gpu-architecture
+  - systems.cuda
+  - systems.triton
+  - systems.flash-attention
+  - distributed.collectives
+  - distributed.parallelism
+  - inference.kv-cache
+  - inference.quantization
+  - inference.speculative-decoding
+  - inference.disaggregated-serving
+  - agents.protocols

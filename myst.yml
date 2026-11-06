@@ -1,0 +1,39 @@
+# Jupyter Book 2 (MyST) configuration. Build locally with: jupyter-book start
+version: 1
+project:
+  id: silicon-to-agents
+  title: Silicon to Agents
+  description: A living knowledge base on the AI stack, from hardware to agents, with runnable code.
+  keywords: [LLM, agents, GPU, CUDA, transformers, inference, training]
+  github: https://github.com/ankitrgupta1/silicon-to-agents
+  toc:
+    - file: README.md
+    - title: Pathways
+      children:
+        - file: pathways/index.md
+        - file: pathways/fundamentals.md
+        - file: pathways/builder.md
+        - file: pathways/practitioner.md
+    - title: The stack
+      children:
+        - file: prereqs/index.md
+        - file: 00-hardware/index.md
+        - file: 01-systems/index.md
+        - file: 02-distributed/index.md
+        - file: 03-foundations/index.md
+          children:
+            - file: 03-foundations/attention.md
+        - file: 04-architectures/index.md
+        - file: 05-training/index.md
+        - file: 06-inference/index.md
+        - file: 07-applications/index.md
+        - file: 08-agents/index.md
+        - file: cross-cutting/index.md
+    - title: Calculators
+      children:
+        - file: calculators/kv-cache.ipynb
+    - file: CHANGELOG.md
+site:
+  template: book-theme
+  options:
+    logo_text: Silicon to Agents

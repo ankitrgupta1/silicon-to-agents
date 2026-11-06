@@ -1,0 +1,14 @@
+id: fundamentals
+title: Fundamentals
+steps:
+  - prereqs.linear-algebra
+  - prereqs.calculus-backprop
+  - prereqs.probability-information
+  - prereqs.python-pytorch
+  - foundations.tokenization
+  - foundations.embeddings-positions
+  - foundations.attention
+  - architectures.transformer
+  - training.tiny-gpt
+  - applications.prompting
+  - applications.rag

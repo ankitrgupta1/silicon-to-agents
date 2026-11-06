@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+build/
+dist/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Jupyter Book / MyST build output
+_build/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
