@@ -70,7 +70,8 @@ Excellent single-layer resources already exist, and this repo links to them rath
 pathways/        learning routes (fundamentals, builder, practitioner)
 prereqs/ … 08-agents/   one folder per layer of the stack
 cross-cutting/   evals, safety & security, cost
-calculators/     interactive notebooks
+calculators/     interactive calculators (KV cache, …)
+labs/            hands-on notebooks (tokenizer, …)
 src/s2a/         tested, reusable Python code
 traces/          vertical slices through the stack (planned)
 capstone/        train → serve → MCP → agent → eval (planned)

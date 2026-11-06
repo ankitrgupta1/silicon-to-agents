@@ -22,6 +22,7 @@ project:
         - file: 02-distributed/distributed.md
         - file: 03-foundations/foundations.md
           children:
+            - file: 03-foundations/tokenization.md
             - file: 03-foundations/attention.md
         - file: 04-architectures/architectures.md
         - file: 05-training/training.md
@@ -31,9 +32,10 @@ project:
         - file: 07-applications/applications.md
         - file: 08-agents/agents.md
         - file: cross-cutting/cross-cutting.md
-    - title: Calculators
+    - title: Calculators & labs
       children:
         - file: calculators/kv-cache.ipynb
+        - file: labs/tokenizer.ipynb
     - file: CHANGELOG.md
 site:
   template: book-theme
