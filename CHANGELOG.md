@@ -6,6 +6,7 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 
 ### Added
 
+- Topic page: [Embeddings & positions](03-foundations/embeddings-positions.md), with RoPE and sinusoidal encodings (`s2a.positions`) and a [positions lab](labs/positions.ipynb).
 - Interactive [KV-cache calculator](https://ankitrgupta1.github.io/silicon-to-agents/widgets/kv-cache.html) that runs in the browser.
 - Hidden answers in the *Check yourself* sections, and in the topic template.
 - Site build check on every pull request.
