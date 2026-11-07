@@ -34,6 +34,8 @@ jobs:
         run: npm install -g jupyter-book
       - name: Build HTML
         run: jupyter-book build --html
+      - name: Add interactive widgets
+        run: cp -r widgets _build/html/widgets
       - uses: actions/upload-pages-artifact@v5
         with:
           path: ./_build/html

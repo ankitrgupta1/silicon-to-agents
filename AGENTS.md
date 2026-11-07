@@ -16,11 +16,27 @@ A living knowledge base about the AI stack, from hardware to agents. Markdown to
 - Keep prose plain and direct. Explain intuition before math.
 - Record notable changes in `CHANGELOG.md` under `Unreleased`.
 
+## Interactivity
+
+Learning here should be hands-on wherever that builds intuition. Every topic page gets, in order of priority:
+
+1. **Check yourself with hidden answers.** Two or three questions, each followed by a `<details><summary>Answer</summary> … </details>` block, with blank lines around the inner text so Markdown renders. Answers explain the reasoning, not just the result. This works both on GitHub and on the site.
+2. **A lab or calculator notebook** when the topic has code: `labs/` for hands-on exploration, `calculators/` for sizing tools. Notebooks run on CPU, start with an *Open in Colab* badge, and import from `s2a` with a fallback `%pip install` from GitHub.
+3. **An interactive widget** only for core ideas where moving a slider or stepping through something teaches more than text (aim for the 10–15 most important concepts, not every page).
+
+Widget rules:
+
+- One self-contained HTML file per widget in `widgets/`: inline CSS and JS, no external libraries or network requests, light and dark mode via `prefers-color-scheme`, mobile-first layout.
+- Any math must match the tested Python in `src/s2a/`. Before committing, load the widget in a headless browser, check there are no JS errors, and compare its outputs with the Python functions.
+- The deploy workflow copies `widgets/` into the site. Link to widgets with absolute URLs (`https://ankitrgupta1.github.io/silicon-to-agents/widgets/<name>.html`) so links work on GitHub and the site.
+- Pages must still read well as plain text; interactivity adds to the explanation, never replaces it.
+- GPU-heavy work (training, kernels, serving) stays in Colab notebooks or recorded results, since it can't run in a browser.
+
 ## Branches and pull requests
 
 - Never commit directly to `main`. `main` is what the website publishes.
 - Start every update on a new branch from the latest `main`, named by type: `content/<topic>` (new or updated pages), `code/<thing>`, `fix/<thing>`, `chore/<thing>` (tooling, CI, config).
-- Keep one topic or change per branch, and open a pull request into `main`. CI must pass before merging.
+- Keep one topic or change per branch, and open a pull request into `main`. CI tests and the site build check must pass before merging.
 - Merging to `main` deploys the site automatically.
 
 ## Code

@@ -16,7 +16,8 @@ Running a trained model fast and cheaply: from a single forward pass to serving 
 
 ## Try it
 
-- [KV-cache calculator](../calculators/kv-cache.ipynb)
+- [Interactive KV-cache calculator](https://ankitrgupta1.github.io/silicon-to-agents/widgets/kv-cache.html) (in your browser)
+- [KV-cache calculator notebook](../calculators/kv-cache.ipynb) (Python)
 
 ## Start here
 

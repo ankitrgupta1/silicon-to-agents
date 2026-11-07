@@ -48,6 +48,8 @@ The folders follow the order of the stack, but you don't have to learn in that o
 ## Read it and run it
 
 - **Website:** this repo is published as a site with Jupyter Book on GitHub Pages.
+- **Interactive widgets:** core ideas have calculators and visuals that run in your browser, like the [KV-cache calculator](https://ankitrgupta1.github.io/silicon-to-agents/widgets/kv-cache.html).
+- **Check yourself:** every topic ends with questions whose answers are hidden until you open them.
 - **Notebooks:** each notebook has an *Open in Colab* button. CPU examples run anywhere; GPU examples use Colab's GPUs.
 - **Code:** reusable code lives in [`src/s2a`](src/s2a/__init__.py) and is tested in CI.
 
@@ -72,6 +74,7 @@ prereqs/ … 08-agents/   one folder per layer of the stack
 cross-cutting/   evals, safety & security, cost
 calculators/     interactive calculators (KV cache, …)
 labs/            hands-on notebooks (tokenizer, …)
+widgets/         interactive browser widgets (KV-cache calculator, …)
 src/s2a/         tested, reusable Python code
 traces/          vertical slices through the stack (planned)
 capstone/        train → serve → MCP → agent → eval (planned)

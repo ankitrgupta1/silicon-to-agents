@@ -85,6 +85,7 @@ tok.decode(tok.encode("naïve 東京"))  # round-trips any text, via raw bytes
 ## What changed
 
 - 2026-11: First version of this page.
+- 2026-11: Added hidden answers to *Check yourself*.
 
 ## Open questions
 
@@ -101,6 +102,31 @@ tok.decode(tok.encode("naïve 東京"))  # round-trips any text, via raw bytes
 
 ## Check yourself
 
-1. Why does byte-level BPE never produce an "unknown token"?
-2. Train the lab tokenizer with and without pre-tokenization. What kinds of tokens appear without it, and why are they a problem?
-3. Your app's prompts are mostly in Hindi. What does that mean for cost and context length compared with English, and what could you measure first?
+Try each one before opening the answer.
+
+**1. Why does byte-level BPE never produce an "unknown token"?**
+
+<details>
+<summary>Answer</summary>
+
+Its starting vocabulary is all 256 byte values, and any text is a sequence of UTF-8 bytes. If no learned merge applies, the text simply stays as individual bytes. Encoding can always fall back to that, so nothing is ever out of vocabulary.
+
+</details>
+
+**2. Train the lab tokenizer with and without pre-tokenization. What kinds of tokens appear without it, and why are they a problem?**
+
+<details>
+<summary>Answer</summary>
+
+Without it you get tokens that cross word and punctuation boundaries, such as `"s a"` or `"text "`, and on repetitive text, whole memorized phrases. That wastes vocabulary slots on fragments that rarely recur. It also makes the same word tokenize differently depending on its neighbors, so the model sees less consistent inputs.
+
+</details>
+
+**3. Your app's prompts are mostly in Hindi. What does that mean for cost and context length compared with English, and what could you measure first?**
+
+<details>
+<summary>Answer</summary>
+
+If the tokenizer saw relatively little Hindi, each sentence takes more tokens. That means a higher cost per request, less content fitting in the context window, and slower generation per sentence. Measure it: take a sample of real prompts, count tokens with your model's own tokenizer, and compare tokens per sentence against English translations of the same prompts. Try a few candidate models, since their tokenizers differ.
+
+</details>
