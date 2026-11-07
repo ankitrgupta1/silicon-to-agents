@@ -12,9 +12,10 @@ For people new to machine learning. Math and intuition first, then building a ti
 | 4 | Tokenization | [Tokenization](../03-foundations/tokenization.md) · [lab](../labs/tokenizer.ipynb) | draft |
 | 5 | Embeddings & positions | [Embeddings & positions](../03-foundations/embeddings-positions.md) · [lab](../labs/positions.ipynb) | draft |
 | 6 | Attention | [Attention](../03-foundations/attention.md) | draft |
-| 7 | The transformer block | [04 Architectures](../04-architectures/architectures.md) | planned |
-| 8 | Train a tiny GPT | [05 Training](../05-training/training.md) | planned |
-| 9 | Prompting | [07 Applications](../07-applications/applications.md) | planned |
-| 10 | RAG basics | [07 Applications](../07-applications/applications.md) | planned |
+| 7 | Next-token prediction, loss & perplexity | [Language-modeling objective](../03-foundations/lm-objective.md) · [lab](../labs/lm-objective.ipynb) | draft |
+| 8 | The transformer block | [04 Architectures](../04-architectures/architectures.md) | planned |
+| 9 | Train a tiny GPT | [05 Training](../05-training/training.md) | planned |
+| 10 | Prompting | [07 Applications](../07-applications/applications.md) | planned |
+| 11 | RAG basics | [07 Applications](../07-applications/applications.md) | planned |
 
 **Checkpoint project:** a character-level GPT trained on a small text, plus a short write-up of what each part does.
