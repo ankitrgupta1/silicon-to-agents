@@ -10,7 +10,7 @@ For people new to machine learning. Math and intuition first, then building a ti
 | 2 | Python & PyTorch basics | [Prerequisites](../prereqs/prereqs.md) | planned |
 | 3 | Backprop by hand (micrograd) | [Prerequisites](../prereqs/prereqs.md) | planned |
 | 4 | Tokenization | [Tokenization](../03-foundations/tokenization.md) · [lab](../labs/tokenizer.ipynb) | draft |
-| 5 | Embeddings & positions | [03 Foundations](../03-foundations/foundations.md) | planned |
+| 5 | Embeddings & positions | [Embeddings & positions](../03-foundations/embeddings-positions.md) · [lab](../labs/positions.ipynb) | draft |
 | 6 | Attention | [Attention](../03-foundations/attention.md) | draft |
 | 7 | The transformer block | [04 Architectures](../04-architectures/architectures.md) | planned |
 | 8 | Train a tiny GPT | [05 Training](../05-training/training.md) | planned |

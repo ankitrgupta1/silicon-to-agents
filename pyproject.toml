@@ -8,10 +8,10 @@ version = "2026.11.0"
 description = "Reusable, tested code for the silicon-to-agents knowledge base"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = ["numpy>=1.26"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "numpy>=1.26"]
+dev = ["pytest>=8"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
