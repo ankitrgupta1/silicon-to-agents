@@ -6,6 +6,8 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 
 ### Added
 
+- Topic page: [Train a tiny GPT](05-training/tiny-gpt.md), with a trainable PyTorch model (`s2a.gpt`) and a [tiny GPT lab](labs/tiny-gpt.ipynb).
+- CI now installs PyTorch and smoke-tests every notebook.
 - Topic page: [The transformer block](04-architectures/transformer.md), with a NumPy forward pass of a modern transformer (`s2a.transformer`) and a [transformer block lab](labs/transformer-block.ipynb).
 - Topic page: [The language-modeling objective](03-foundations/lm-objective.md), with loss, perplexity and a bigram model (`s2a.lm`) and a [language-modeling lab](labs/lm-objective.ipynb). Completes the Foundations layer.
 - Topic page: [Embeddings & positions](03-foundations/embeddings-positions.md), with RoPE and sinusoidal encodings (`s2a.positions`) and a [positions lab](labs/positions.ipynb).

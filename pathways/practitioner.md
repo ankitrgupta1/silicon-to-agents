@@ -7,7 +7,7 @@ For people who want the deep internals. Builds a model from scratch, then follow
 | # | Step | Where | Status |
 |---|---|---|---|
 | 1 | Attention & the transformer | [Attention](../03-foundations/attention.md) · [The transformer block](../04-architectures/transformer.md) · [lab](../labs/transformer-block.ipynb) | draft |
-| 2 | GPT from scratch | [LM objective](../03-foundations/lm-objective.md) · [05 Training](../05-training/training.md) | planned |
+| 2 | GPT from scratch | [LM objective](../03-foundations/lm-objective.md) · [Train a tiny GPT](../05-training/tiny-gpt.md) · [lab](../labs/tiny-gpt.ipynb) | draft |
 | 3 | MoE, state-space & hybrid models | [04 Architectures](../04-architectures/architectures.md) | planned |
 | 4 | Data & scaling laws | [05 Training](../05-training/training.md) | planned |
 | 5 | Post-training & RL for reasoning | [05 Training](../05-training/training.md) | planned |

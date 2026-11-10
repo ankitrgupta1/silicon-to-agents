@@ -43,6 +43,9 @@ Widget rules:
 
 - Python 3.10+, tested with `pytest`. Run `pip install -e ".[dev]" && pytest` before committing.
 - Notebooks must run on CPU unless tagged otherwise, and must start with an *Open in Colab* badge.
+- `tests/test_notebooks.py` runs every notebook's code cells in CI. Notebooks that train must read their step count from the `S2A_STEPS` environment variable (with a sensible default) so the CI run stays short.
+- PyTorch code lives in its own modules (for example `s2a.gpt`), so the rest of `s2a` imports without it. Tests for those modules start with `pytest.importorskip("torch")`. CI installs CPU PyTorch; if your environment has no PyTorch, rely on the CI results and say so in the pull request.
+- Where a PyTorch module mirrors a NumPy one, keep a test that both give the same outputs from the same weights.
 
 ## Don't
 
