@@ -19,6 +19,7 @@ project:
         - file: prereqs/prereqs.md
           children:
             - file: prereqs/linear-algebra.md
+            - file: prereqs/probability.md
             - file: prereqs/backprop.md
             - file: prereqs/pytorch.md
         - file: 00-hardware/hardware.md
@@ -46,6 +47,7 @@ project:
       children:
         - file: calculators/kv-cache.ipynb
         - file: labs/linear-algebra.ipynb
+        - file: labs/probability.ipynb
         - file: labs/backprop.ipynb
         - file: labs/pytorch-basics.ipynb
         - file: labs/tokenizer.ipynb
