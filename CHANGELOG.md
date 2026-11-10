@@ -6,6 +6,7 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 
 ### Added
 
+- Topic page: [Python & PyTorch](prereqs/pytorch.md), with a [PyTorch basics lab](labs/pytorch-basics.ipynb).
 - Topic page: [Calculus & backprop](prereqs/backprop.md), with a from-scratch autograd engine (`s2a.autograd`) and a [backprop lab](labs/backprop.ipynb).
 - Topic page: [Train a tiny GPT](05-training/tiny-gpt.md), with a trainable PyTorch model (`s2a.gpt`) and a [tiny GPT lab](labs/tiny-gpt.ipynb).
 - CI now installs PyTorch and smoke-tests every notebook.

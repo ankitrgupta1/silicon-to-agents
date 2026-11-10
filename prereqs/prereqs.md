@@ -10,7 +10,7 @@ The background the rest of the stack assumes. Not a stack layer: this is where t
 | [Calculus & backprop](backprop.md) | Chain rule, gradients, building autograd from scratch | **draft** |
 | Probability & information | Softmax, cross-entropy, KL divergence, perplexity | planned |
 | Optimization | SGD, momentum, Adam/AdamW, learning-rate schedules | planned |
-| Python & PyTorch | Tensors, autograd, `nn.Module`, `torch.compile`, profiling | planned |
+| [Python & PyTorch](pytorch.md) | Tensors, broadcasting, autograd, `nn.Module`, the training loop | **draft** |
 | ML basics | MLPs, overfitting, regularization, train/val/test splits | planned |
 
 ## Start here

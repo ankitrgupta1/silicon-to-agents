@@ -2,8 +2,8 @@ id: fundamentals
 title: Fundamentals
 steps:
   - prereqs.linear-algebra
-  - prereqs.calculus-backprop
   - prereqs.probability-information
+  - prereqs.calculus-backprop
   - prereqs.python-pytorch
   - foundations.tokenization
   - foundations.embeddings-positions

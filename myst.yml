@@ -19,6 +19,7 @@ project:
         - file: prereqs/prereqs.md
           children:
             - file: prereqs/backprop.md
+            - file: prereqs/pytorch.md
         - file: 00-hardware/hardware.md
         - file: 01-systems/systems.md
         - file: 02-distributed/distributed.md
@@ -44,6 +45,7 @@ project:
       children:
         - file: calculators/kv-cache.ipynb
         - file: labs/backprop.ipynb
+        - file: labs/pytorch-basics.ipynb
         - file: labs/tokenizer.ipynb
         - file: labs/positions.ipynb
         - file: labs/lm-objective.ipynb
