@@ -6,6 +6,7 @@ How a model gets its behavior: data, pretraining, post-training and reinforcemen
 
 | Topic | What it covers | Status |
 |---|---|---|
+| [Train a tiny GPT](tiny-gpt.md) | The training loop: batches, backprop, AdamW, held-out loss, sampling | **draft** |
 | Data | Web crawls, deduplication, quality filtering, mixing, synthetic data | planned |
 | Pretraining & scaling laws | Chinchilla, over-training, μP, LR schedules, stability | planned |
 | Post-training | SFT, chat templates, LoRA/QLoRA, preference optimization (RLHF, DPO) | planned |

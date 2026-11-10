@@ -30,6 +30,8 @@ project:
           children:
             - file: 04-architectures/transformer.md
         - file: 05-training/training.md
+          children:
+            - file: 05-training/tiny-gpt.md
         - file: 06-inference/inference.md
           children:
             - file: 06-inference/kv-cache.md
@@ -43,6 +45,7 @@ project:
         - file: labs/positions.ipynb
         - file: labs/lm-objective.ipynb
         - file: labs/transformer-block.ipynb
+        - file: labs/tiny-gpt.ipynb
     - file: CHANGELOG.md
 site:
   template: book-theme
