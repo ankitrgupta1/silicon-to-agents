@@ -6,6 +6,7 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 
 ### Added
 
+- Topic page: [The transformer block](04-architectures/transformer.md), with a NumPy forward pass of a modern transformer (`s2a.transformer`) and a [transformer block lab](labs/transformer-block.ipynb).
 - Topic page: [The language-modeling objective](03-foundations/lm-objective.md), with loss, perplexity and a bigram model (`s2a.lm`) and a [language-modeling lab](labs/lm-objective.ipynb). Completes the Foundations layer.
 - Topic page: [Embeddings & positions](03-foundations/embeddings-positions.md), with RoPE and sinusoidal encodings (`s2a.positions`) and a [positions lab](labs/positions.ipynb).
 - Interactive [KV-cache calculator](https://ankitrgupta1.github.io/silicon-to-agents/widgets/kv-cache.html) that runs in the browser.
