@@ -25,6 +25,7 @@ project:
             - file: 03-foundations/tokenization.md
             - file: 03-foundations/embeddings-positions.md
             - file: 03-foundations/attention.md
+            - file: 03-foundations/lm-objective.md
         - file: 04-architectures/architectures.md
         - file: 05-training/training.md
         - file: 06-inference/inference.md
@@ -38,6 +39,7 @@ project:
         - file: calculators/kv-cache.ipynb
         - file: labs/tokenizer.ipynb
         - file: labs/positions.ipynb
+        - file: labs/lm-objective.ipynb
     - file: CHANGELOG.md
 site:
   template: book-theme

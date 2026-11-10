@@ -3,6 +3,7 @@ title: Practitioner
 steps:
   - foundations.attention
   - architectures.transformer
+  - foundations.lm-objective
   - training.tiny-gpt
   - architectures.moe
   - architectures.ssm-hybrids

@@ -8,6 +8,7 @@ steps:
   - foundations.tokenization
   - foundations.embeddings-positions
   - foundations.attention
+  - foundations.lm-objective
   - architectures.transformer
   - training.tiny-gpt
   - applications.prompting
