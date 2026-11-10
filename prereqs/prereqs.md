@@ -6,7 +6,7 @@ The background the rest of the stack assumes. Not a stack layer: this is where t
 
 | Topic | What it covers | Status |
 |---|---|---|
-| Linear algebra | Vectors, matrix multiply, SVD and low-rank ideas (used by LoRA) | planned |
+| [Linear algebra](linear-algebra.md) | Vectors, dot products, matrix multiply, SVD and low rank, LoRA | **draft** |
 | [Calculus & backprop](backprop.md) | Chain rule, gradients, building autograd from scratch | **draft** |
 | Probability & information | Softmax, cross-entropy, KL divergence, perplexity | planned |
 | Optimization | SGD, momentum, Adam/AdamW, learning-rate schedules | planned |

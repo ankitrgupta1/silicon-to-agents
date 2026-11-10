@@ -6,7 +6,7 @@ For people new to machine learning. Math and intuition first, then building a ti
 
 | # | Step | Where | Status |
 |---|---|---|---|
-| 1 | Linear algebra, calculus, probability | [Prerequisites](../prereqs/prereqs.md) | planned |
+| 1 | Linear algebra and probability | [Linear algebra](../prereqs/linear-algebra.md) · [lab](../labs/linear-algebra.ipynb) · probability (planned) | draft |
 | 2 | Backprop by hand | [Calculus & backprop](../prereqs/backprop.md) · [lab](../labs/backprop.ipynb) | draft |
 | 3 | Python & PyTorch basics | [Python & PyTorch](../prereqs/pytorch.md) · [lab](../labs/pytorch-basics.ipynb) | draft |
 | 4 | Tokenization | [Tokenization](../03-foundations/tokenization.md) · [lab](../labs/tokenizer.ipynb) | draft |
