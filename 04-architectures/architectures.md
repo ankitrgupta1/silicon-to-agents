@@ -6,7 +6,7 @@ What the network is: how the building blocks are arranged, and the alternatives 
 
 | Topic | What it covers | Status |
 |---|---|---|
-| The modern transformer | Pre-norm RMSNorm, SwiGLU, RoPE, QK-norm, depth vs width | planned |
+| [The transformer block](transformer.md) | Residual stream, pre-norm RMSNorm, GQA + RoPE, SwiGLU, where the parameters live | **draft** |
 | Mixture-of-Experts | Routing, shared experts, load balancing, fine-grained experts | planned |
 | State-space & linear attention | Mamba, RWKV, DeltaNet and Gated DeltaNet | planned |
 | Hybrid models | Mixing linear and full attention layers | planned |

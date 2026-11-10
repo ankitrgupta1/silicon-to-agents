@@ -27,6 +27,8 @@ project:
             - file: 03-foundations/attention.md
             - file: 03-foundations/lm-objective.md
         - file: 04-architectures/architectures.md
+          children:
+            - file: 04-architectures/transformer.md
         - file: 05-training/training.md
         - file: 06-inference/inference.md
           children:
@@ -40,6 +42,7 @@ project:
         - file: labs/tokenizer.ipynb
         - file: labs/positions.ipynb
         - file: labs/lm-objective.ipynb
+        - file: labs/transformer-block.ipynb
     - file: CHANGELOG.md
 site:
   template: book-theme
