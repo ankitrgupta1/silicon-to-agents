@@ -6,6 +6,7 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 
 ### Added
 
+- Topic page: [Prompting](07-applications/prompting.md), with chat templates, constrained decoding and caching arithmetic (`s2a.prompting`) and a [prompting lab](labs/prompting.ipynb).
 - Topic page: [Probability & information](prereqs/probability.md), with entropy, cross-entropy and KL helpers (`s2a.info`) and a [probability lab](labs/probability.ipynb).
 - Topic page: [Linear algebra](prereqs/linear-algebra.md), with helpers (`s2a.linalg`) and a [linear algebra lab](labs/linear-algebra.ipynb).
 - Topic page: [Python & PyTorch](prereqs/pytorch.md), with a [PyTorch basics lab](labs/pytorch-basics.ipynb).

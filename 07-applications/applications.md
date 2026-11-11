@@ -6,7 +6,7 @@ Building useful things with models: prompts, retrieval, context management and r
 
 | Topic | What it covers | Status |
 |---|---|---|
-| Prompting | Few-shot, chain-of-thought prompting, system prompts, structured outputs, prompt caching | planned |
+| [Prompting](prompting.md) | Chat templates, clear instructions, few-shot, reasoning, structured outputs, prompt caching | **draft** |
 | RAG | Chunking, embeddings, vector search, hybrid search, reranking, GraphRAG | planned |
 | Context engineering | Budgeting the context window, compaction, retrieval on demand, Agent Skills | planned |
 | Fine-tuning for apps | When to fine-tune vs prompt vs retrieve; serving LoRA adapters | planned |

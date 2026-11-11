@@ -41,6 +41,8 @@ project:
           children:
             - file: 06-inference/kv-cache.md
         - file: 07-applications/applications.md
+          children:
+            - file: 07-applications/prompting.md
         - file: 08-agents/agents.md
         - file: cross-cutting/cross-cutting.md
     - title: Calculators & labs
@@ -55,6 +57,7 @@ project:
         - file: labs/lm-objective.ipynb
         - file: labs/transformer-block.ipynb
         - file: labs/tiny-gpt.ipynb
+        - file: labs/prompting.ipynb
     - file: CHANGELOG.md
 site:
   template: book-theme
