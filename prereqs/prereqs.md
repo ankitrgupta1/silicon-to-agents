@@ -8,7 +8,7 @@ The background the rest of the stack assumes. Not a stack layer: this is where t
 |---|---|---|
 | [Linear algebra](linear-algebra.md) | Vectors, dot products, matrix multiply, SVD and low rank, LoRA | **draft** |
 | [Calculus & backprop](backprop.md) | Chain rule, gradients, building autograd from scratch | **draft** |
-| Probability & information | Softmax, cross-entropy, KL divergence, perplexity | planned |
+| [Probability & information](probability.md) | Surprise, entropy, cross-entropy, KL divergence | **draft** |
 | Optimization | SGD, momentum, Adam/AdamW, learning-rate schedules | planned |
 | [Python & PyTorch](pytorch.md) | Tensors, broadcasting, autograd, `nn.Module`, the training loop | **draft** |
 | ML basics | MLPs, overfitting, regularization, train/val/test splits | planned |
