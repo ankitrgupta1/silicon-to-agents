@@ -16,6 +16,6 @@ For people new to machine learning. Math and intuition first, then building a ti
 | 8 | The transformer block | [The transformer block](../04-architectures/transformer.md) · [lab](../labs/transformer-block.ipynb) | draft |
 | 9 | Train a tiny GPT | [Train a tiny GPT](../05-training/tiny-gpt.md) · [lab](../labs/tiny-gpt.ipynb) | draft |
 | 10 | Prompting | [Prompting](../07-applications/prompting.md) · [lab](../labs/prompting.ipynb) | draft |
-| 11 | RAG basics | [07 Applications](../07-applications/applications.md) | planned |
+| 11 | RAG basics | [RAG basics](../07-applications/rag.md) · [lab](../labs/rag.ipynb) | draft |
 
 **Checkpoint project:** a character-level GPT trained on a small text, plus a short write-up of what each part does.
