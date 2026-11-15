@@ -6,7 +6,7 @@ Models that act: calling tools, planning, remembering and working with other age
 
 | Topic | What it covers | Status |
 |---|---|---|
-| The agent loop | ReAct, tool calling, planning, reflection | planned |
+| [The agent loop](agent-loop.md) | Tool calling, ReAct, errors, approval, step limits, cost | **draft** |
 | Memory | Short-term context, episodic and semantic memory | planned |
 | Protocols | MCP, A2A, AGENTS.md, Agent Skills (pin spec versions) | planned |
 | Agent types | Coding, deep research, computer-use and browser, voice | planned |

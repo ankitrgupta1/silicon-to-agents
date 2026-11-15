@@ -6,6 +6,7 @@ All notable changes to this knowledge base. Releases use calendar versioning (`v
 
 ### Added
 
+- Topic page: [The agent loop](08-agents/agent-loop.md), with a tested agent loop (`s2a.agent`) and an [agent loop lab](labs/agent-loop.ipynb).
 - Topic page: [RAG basics](07-applications/rag.md), with chunking, BM25, dense and hybrid retrieval and evaluation (`s2a.rag`) and a [RAG lab](labs/rag.ipynb) that searches this repository.
 - Topic page: [Prompting](07-applications/prompting.md), with chat templates, constrained decoding and caching arithmetic (`s2a.prompting`) and a [prompting lab](labs/prompting.ipynb).
 - Topic page: [Probability & information](prereqs/probability.md), with entropy, cross-entropy and KL helpers (`s2a.info`) and a [probability lab](labs/probability.ipynb).

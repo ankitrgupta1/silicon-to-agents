@@ -45,6 +45,8 @@ project:
             - file: 07-applications/prompting.md
             - file: 07-applications/rag.md
         - file: 08-agents/agents.md
+          children:
+            - file: 08-agents/agent-loop.md
         - file: cross-cutting/cross-cutting.md
     - title: Calculators & labs
       children:
@@ -60,6 +62,7 @@ project:
         - file: labs/tiny-gpt.ipynb
         - file: labs/prompting.ipynb
         - file: labs/rag.ipynb
+        - file: labs/agent-loop.ipynb
     - file: CHANGELOG.md
 site:
   template: book-theme
