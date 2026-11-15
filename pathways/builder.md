@@ -7,7 +7,7 @@ For people building apps and agents. Starts at the top of the stack and goes dow
 | # | Step | Where | Status |
 |---|---|---|---|
 | 1 | Prompting & structured outputs | [Prompting](../07-applications/prompting.md) · [lab](../labs/prompting.ipynb) | draft |
-| 2 | RAG & context engineering | [07 Applications](../07-applications/applications.md) | planned |
+| 2 | RAG & context engineering | [RAG basics](../07-applications/rag.md) · [lab](../labs/rag.ipynb) · context engineering (planned) | draft |
 | 3 | The agent loop & tool calling | [08 Agents](../08-agents/agents.md) | planned |
 | 4 | Protocols: MCP & A2A | [08 Agents](../08-agents/agents.md) | planned |
 | 5 | Memory & multi-agent patterns | [08 Agents](../08-agents/agents.md) | planned |
